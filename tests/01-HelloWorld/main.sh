@@ -6,27 +6,33 @@ depend {
 
 CALL_webext run {
     "manifest": {
+        "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
         "permissions": [
             "webRequest",
             "<all_urls>"
         ],
-        "background": {
+        "content": {
             "scripts": [
                 {
-                    "worker.js": {
-                        "@it.pinf.org.mochajs#s1": {
-                            "suite": "worker",
-                            "tests": {
-                                "01-HelloWorld": function /* CodeBlock */ () {
+                    "matches": [
+                        "<all_urls>"
+                    ],
+                    "js": {
+                        "content-script.js": {
+                            "@it.pinf.org.mochajs#s1": {
+                                "suite": "content-script",
+                                "tests": {
+                                    "01-HelloWorld": function /* CodeBlock */ () {
 
-                                    describe('Array', function () {
-                                        describe('#indexOf()', function () {
+                                        describe('Array', function () {
+                                            describe('#indexOf()', function () {
 
-                                            it('should return -1 when the value is not present', function () {
-                                                chai.assert.equal(-1, [1,2,3].indexOf(4));
+                                                it('should return -1 when the value is not present [content-script]', function () {
+                                                    chai.assert.equal(-1, [1,2,3].indexOf(4));
+                                                });
                                             });
                                         });
-                                    });
+                                    }
                                 }
                             }
                         }
@@ -45,7 +51,7 @@ CALL_webext run {
                         describe('Array', function () {
                             describe('#indexOf()', function () {
 
-                                it('should return -1 when the value is not present', function () {
+                                it('should return -1 when the value is not present [page]', function () {
                                     chai.assert.equal(-1, [1,2,3].indexOf(4));
                                 });
                             });
@@ -61,7 +67,7 @@ CALL_webext run {
             {
                 "@it.pinf.org.mochajs#s1": {
                     "suites": [
-                        "worker",
+                        "content-script",
                         "page"
                     ]
                 }

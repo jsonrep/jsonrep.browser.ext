@@ -1,16 +1,16 @@
 Adding route: /^\//
-Adding route: /scripts/worker.js
+Adding route: /scripts/content-script.js
 >>>TEST_IGNORE_LINE:"(start|end|duration)": (".*Z"|[\d]+),?s*$<<<
 <RESULTS>
 {
-    "page": {
+    "content-script": {
         "suites": 3,
         "tests": 1,
         "passes": 1,
         "pending": 0,
         "failures": 0,
     },
-    "worker": {
+    "page": {
         "suites": 3,
         "tests": 1,
         "passes": 1,
