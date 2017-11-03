@@ -9,8 +9,8 @@ function do_build {
 
     CALL_webext run {
         "manifest": {
-            "name": "JSONrep",
-            "description": "Render JSONrep annotated JSON documents on GitHub",
+            "name": "JSONrep for GitHub",
+            "description": "Render JSONrep annotated HTML tags & JSON documents when browsing GitHub.",
             "applications": {
                 "gecko": {
                     "id": "browser-ext-com-github-0@jsonrep.org",
