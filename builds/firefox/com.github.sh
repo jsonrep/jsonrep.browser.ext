@@ -45,7 +45,7 @@ function do_sign {
     pushd ".rt/github.com~pinf-to~to.pinf.org.mozilla.web-ext/extension.built" > /dev/null
 
         CALL_webext sign {
-            "dist": "$__DIRNAME__/dist/jsonrep-com-github.xpi",
+            "dist": "$__DIRNAME__/../../dist/jsonrep-firefox-com-github.xpi",
             "manifest": {
             }
         }
