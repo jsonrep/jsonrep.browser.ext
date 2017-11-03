@@ -13,7 +13,7 @@ function do_build {
             "description": "Render JSONrep annotated HTML tags & JSON documents when browsing GitHub.",
             "applications": {
                 "gecko": {
-                    "id": "browser-ext-com-github-0@jsonrep.org",
+                    "id": "browser-ext-com-github-1@jsonrep.org",
                     "strict_min_version": "42.0"
                 }
             },
